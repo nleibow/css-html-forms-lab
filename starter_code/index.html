@@ -83,7 +83,7 @@
 				    	<label for="noun-2">Noun:</label>
 				    	<input id="noun-2" name="noun-2">
 					</div>
-					<div class="row formGroup">
+					<div class="row formGroup" id="submitit">
 				    	<input type="submit">
 				    </div>
 				    
@@ -114,10 +114,21 @@
 
 
 		$("form").on("submit", function(event){
+			event.preventDefault();
+			makeResults();
 
-		    // Stop the form from submitting
 
-	    	// Append the new <section> created above.
+			$('.container.results').append("Once upon a time there was a Developer named " + $("#name").val() +".");
+
+		   $('.container.results').append(" " + $("#name").val() + " came to General Asssembly to" + " " + $("#verb-1").val() + " the great mountain of programming knowledge.")
+
+		   $('.container.results').append(" " + $("#mission").val()+", " + $("#name").val() + " " + " shouted.")
+
+		   $('.container.results').append("Though " + $("input[name = sentiment]:checked").val() + " " + $("#name").val() + "was able to overcome all obstacles with the power of their " + $("#noun-1").val());
+
+		   $('.container.results').append("In the end, their success can be contributed entirely to their " + $("input[name = adjective-2]:checked").val() + $("noun-2").val());
+
+
 
 	    	/*
 			
